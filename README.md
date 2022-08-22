@@ -1,7 +1,8 @@
 # README
+Welcome to teslazonda's marketplace JSON API. This README contains information on how to make requests to the API,
+API responses and error codes, and the technical details of the API.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This API is based on the [book](https://github.com/madeindjs/api_on_rails) *API on Rails 6* by Alexandre Rousseau.
 
 Things you may want to cover:
 
