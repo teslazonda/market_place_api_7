@@ -4,16 +4,12 @@ class Api::V1::ProductsController < ApplicationController
   before_action :check_login, only: %i[create]
   before_action :check_owner, only: %i[update destroy]
   def index
-    @products = Product.page(current_page).per(per_page).search(params)
-    options = {
-      links: {
-        first: api_v1_products_path(page: 1),
-        last: api_v1_products_path(page: @products.total_pages),
-        prev: api_v1_products_path(page: @products.prev_page),
-        next: api_v1_products_path(page: @products.next_page)
-      }
-    }
-    render json: ProductSerializer.new(@products, options).serializable_hash.to_json
+    def index
+      @products = Product.includes(:user).page(current_page).per(per_page).search(params)
+      options = get_links_serializer_options('api_v1_products_path', @products)
+      options[:include] = [:user]
+      render json: ProductSerializer.new(@products, options).serializable_hash.to_json
+    end
   end
 
   def show
