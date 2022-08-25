@@ -1,4 +1,4 @@
-# README
+# Market Place API
 Welcome to teslazonda's marketplace JSON API. This README contains information on how to make requests to the API,
 API responses and error codes, and the technical details of the API.
 
