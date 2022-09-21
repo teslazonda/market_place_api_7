@@ -9,7 +9,7 @@ The marketplace API simulates an e-commerce API that provides developers with in
 ## Requests and Responses
 This API uses authorization tokens for security. To make a successful request, you must first request a token for a user. This is accomplished with the following ```curl``` command:
 
-curl -X POST --data "user[email]=ockymarvin@jacobi.co" --data "user[password]=locadex1234" http://localhost:3000/api/v1/tokens
+`curl -X POST --data "user[email]=example@example.com" --data "user[password]=locadex1234" http://localhost:3000/api/v1/tokens`
 
 ## Running this API locally
 * Ruby version
